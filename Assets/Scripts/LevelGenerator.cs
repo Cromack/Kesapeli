@@ -27,7 +27,7 @@ public class LevelGenerator : MonoBehaviour {
 
     void GenerateEnemies()
     {
-        Instantiate(EnemyPrefab, new Vector3(15, 0, 1), Quaternion.identity);
+        Instantiate(EnemyPrefab, new Vector3(10, 0, 1), Quaternion.identity);
     }
 	// Update is called once per frame
 	void Update () {
