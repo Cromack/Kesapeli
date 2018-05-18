@@ -6,6 +6,7 @@ public class PlayerControls : MonoBehaviour {
 
     public Rigidbody2D rb;
     public int speed;
+    public int MaxSpeed;
     Animator animator;
 
     enum State{
@@ -34,6 +35,8 @@ public class PlayerControls : MonoBehaviour {
                 float accelerate = Input.GetAxis("Horizontal");
                 Vector2 acceleration = new Vector2(accelerate, 0);
                 rb.AddForce(acceleration * speed);
+
+                rb.velocity = Vector3.ClampMagnitude(rb.velocity, MaxSpeed);
 
                 if (Input.GetButton("Horizontal") == false)
                 {
